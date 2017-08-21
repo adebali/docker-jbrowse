@@ -4,3 +4,4 @@ jbrowse:
    - "8080:80"
   volumes:
    - ./example:/data
+   - ./custom_scripts:/custom_scripts

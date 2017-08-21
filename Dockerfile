@@ -15,6 +15,7 @@ RUN wget -O jbrowse.zip http://jbrowse.org/wordpress/wp-content/plugins/download
     mv JBrowse-* jbrowse
 
 WORKDIR /jbrowse/
+RUN mkdir -p /jbrowse/custom_scripts
 RUN ./setup.sh && \
     ./bin/cpanm --notest --force JSON Digest::Crc32 Hash::Merge PerlIO::gzip Devel::Size \
     Heap::Simple Heap::Simple::XS List::MoreUtils Exception::Class Test::Warn Bio::Perl \
