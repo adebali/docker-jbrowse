@@ -4,6 +4,13 @@ FROM nginx
 MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
 
+LABEL io.k8s.description="jbrowse applcication" \
+ io.k8s.display-name="JBROWSE APP" \
+ io.openshift.expose-services="8080:http"
+
+USER 1001
+EXPOSE 8080
+
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
 
 RUN apt-get -qq update --fix-missing
