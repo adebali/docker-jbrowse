@@ -8,8 +8,7 @@ LABEL io.k8s.description="jbrowse applcication" \
  io.k8s.display-name="JBROWSE APP" \
  io.openshift.expose-services="8080:http"
 
-USER 1001
-EXPOSE 8080
+
 
 RUN mkdir -p /usr/share/man/man1 /usr/share/man/man7
 
@@ -34,6 +33,9 @@ RUN perl Makefile.PL && make && make install
 RUN rm -rf /usr/share/nginx/html && ln -s /jbrowse/ /usr/share/nginx/html
 
 RUN echo "include += data/datasets.conf" >> /jbrowse/jbrowse.conf
+
+USER 1001
+EXPOSE 8080
 
 VOLUME /data
 COPY docker-entrypoint.sh /
