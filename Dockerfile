@@ -3,6 +3,7 @@
 FROM nginx
 MAINTAINER Eric Rasche <esr@tamu.edu>
 ENV DEBIAN_FRONTEND noninteractive
+ENV NGINX_PORT 8080
 
 LABEL io.k8s.description="jbrowse applcication" \
  io.k8s.display-name="JBROWSE APP" \
