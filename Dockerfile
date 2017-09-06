@@ -77,6 +77,5 @@ RUN chown -R 1001:0 /var/cache/nginx && \
 USER 1001
 EXPOSE 8080
 
-VOLUME /data
 COPY docker-entrypoint.sh /
 CMD ["/docker-entrypoint.sh"]
