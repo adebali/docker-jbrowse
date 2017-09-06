@@ -71,7 +71,8 @@ RUN rm -rf /usr/share/nginx/html && ln -s /jbrowse/ /usr/share/nginx/html
 RUN echo "include += data/datasets.conf" >> /jbrowse/jbrowse.conf
 
 RUN chown -R 1001:0 /var/cache/nginx && \
-    chmod -R g+w /var/cache/nginx
+    chmod -R g+w /var/cache/nginx && \
+    chmod -R g+w /run
 
 USER 1001
 EXPOSE 8080
